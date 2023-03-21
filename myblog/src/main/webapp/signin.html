@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+@import
+	url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400&display=swap')
+	;
+
+@import
+	url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap")
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	background-color: Lightyellow;
+	color: dimGray;
+}
+
+article {
+	margin-left: 100px;
+	margin-top: 50px;
+}
+
+section {
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+.nameClass .pwdClass {
+	margin-left: 100px;
+	height: 30px;
+	width: 400px;
+	padding: 5px;
+	margin: 10px;
+}
+
+input {
+	height: 30px;
+	width: 500px;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	border: 1px solid silver;
+}
+
+button {
+	margin-top: 20px;
+	margin-left: 400px;
+}
+
+.w-btn {
+	position: relative;
+	border: none;
+	display: inline-block;
+	padding: 15px 30px;
+	border-radius: 15px;
+	font-family: "paybooc-Light", sans-serif;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+	font-weight: 600;
+	transition: 0.25s;
+}
+
+.w-btn-outline {
+	position: relative;
+	padding: 15px 30px;
+	border-radius: 15px;
+	font-family: "paybooc-Light", sans-serif;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+	font-weight: 600;
+	transition: 0.25s;
+}
+
+.w-btn w-btn-indigo {
+	border: none;
+	padding: 15px 30px;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+a:link {
+	color: orange;
+	text-decoration: none;
+}
+
+a:visited {
+	color: orange;
+	text-decoration: none;
+}
+
+a:hover {
+	color: orange;
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+	<!-- 
+		signin.html 요청을 하면 화면을 그리는 담당
+		1. 요청 URL
+		form태그 중 method 속성과 action 속성에 대해 알아보고
+		name값과 password 값을 보낼 수 있는 화면을 구성하시오.
+		
+		2. 버튼을 누르면 연산처리를 할 sublet객체를 만들어주세요.
+			method 방식 : post
+			서버 콘솔창에 넘겨 받은 데이터를 출력하시오.
+	 -->
+
+	<article>
+		<h1>Sign in to your account</h1>
+	</article>
+
+	<section>
+		<form action="http://localhost:8080/myblog/logincontroller"
+			method="post">
+			<div class="form1">
+				<h3>
+					<label>Username*</label>
+				</h3>
+				<input type="text" class="nameClass" id="name" name="name"
+					placeholder="Enter your name">
+			</div>
+			<div class="form1">
+				<h3>
+					<label>Password*</label>
+				</h3>
+				<input type="password" class="pwdClass" id="password"
+					name="password" placeholder="Enter your password">
+			</div>
+			<div class="form1">
+				<h5>
+					Forgot your password? <a href="#">Reset password</a>
+				</h5>
+			</div>
+			<button class="w-btn w-btn-indigo" type="submit">Submit</button>
+		</form>
+	</section>
+</body>
+</html>

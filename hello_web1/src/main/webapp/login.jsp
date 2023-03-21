@@ -5,43 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>login</title>
-<style type="text/css">
+<style>
 	*{
-		box-sizing: border-box;
 		margin:0;
 		padding:0;
+		box-sizing: border-box;
 	}
 	
 	header{
-		padding:50px;
 		text-align: center;
+		padding:100px;
 	}
 	
 	section{
-		border:1px solid black;
-		width:700px;
-		padding:30px;
-		margin:10px;
-		text-align: center;
+		border : 1px solid gray;
 	}
 	
-	.div-wrap{
-		display: flex;
-		padding : 20px;
-	}
-	
-	.div-wrap label{
-		flex:0.5;
-	}
-	
-	.div-wrap input{
-		flex:3.5;
-	}
-	
-	#inputId{
-		width:100px;
-		height:50px;
-		
+	input{
+		outline:none;
+		background-color:olive;
+		border-radius:10px;
 	}
 </style>
 </head>
@@ -51,18 +34,18 @@
 	</header>
 	
 	<section>
-		<form>
-			<div class="div-wrap">
-				<!-- label의 for과 input의 id값이 같으면 연결됨 -->
-				<label for="id">아이디 </label>
-				<input type="text" id="id">
+		<form action="주소" method="post">
+			<div class="text">
+				<input type="text" placeholder = "아이디">
 			</div>
-			<div class="div-wrap">
-				<label for="pw">비밀번호 </label>
-				<input type="password" id="pw">
-			</div>
-			<input id="inputId" type = "submit" value="로그인">
+			<div class="password">
+				<input type="password" placeholder = "비밀번호">
+			</div> 
 		</form>
+		
+		<input type="submit" value="로그인">
+		<input type="reset" value="초기화">
+		<input type="button" value="회원가입">
 	</section>
 </body>
 </html>
