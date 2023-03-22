@@ -26,6 +26,7 @@ public class UserController extends HttpServlet {
 		// 문제 2
 		// JSON형식으로 name = 홍길동, age = 10이라는 값을 리턴시키세요. (응답)
 		// CHARSET은 Writer 전에
+		// JSON형식으로 정보를 response한 거임. (응답) -> 웹페이지에 나타남.
 		response.setContentType("application/json; charset=utf-8;");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
@@ -57,7 +58,18 @@ public class UserController extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8;");
 
 		PrintWriter out = response.getWriter();
+		out.print("<!DOCTYPE html>");
+		out.print("<html>");
+		out.print("<head>");
+		out.print("</head>");
+		out.print("<body>");
+		out.print("<section>");
+		out.print("<p>");
 		out.print("이름과 비번을 확인하였습니다.");
+		out.print("</p>");
+		out.print("</section>");
+		out.print("</body>");
+		out.print("</html>");
 
 	}
 

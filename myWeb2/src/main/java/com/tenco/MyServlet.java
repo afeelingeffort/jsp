@@ -30,7 +30,6 @@ public class MyServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print("<!DOCTYPE html>");
 		out.print("<html>");
-		out.print("</html>");
 		out.print("<head>");
 		out.print("</head>");
 		out.print("<body>");
@@ -40,6 +39,7 @@ public class MyServlet extends HttpServlet {
 		out.print("</p>");
 		out.print("</section>");
 		out.print("</body>");
+		out.print("</html>");
 
 		// 응답 response 객체를 사용하면 된다.
 		// 문자열을 보낼 수 있음.

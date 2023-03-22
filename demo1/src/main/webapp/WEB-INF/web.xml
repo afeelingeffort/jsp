@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>demo1</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<!-- 서블릿이라고 명시 : 패키지 명까지 적어야 함 -->
+	<servlet>
+		<servlet-name>helloServlet</servlet-name>
+		<servlet-class>com.tenco.HelloServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/hs</url-pattern>
+	</servlet-mapping>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- web.xml : 설정 변경 후에 서버 재실행 해야 반영된다. -->
+	<!-- servlet 이름, servlet 클래스 경로, servlet 매핑할 이름 -->
+	<servlet>
+		<servlet-name>hiServlet</servlet-name>
+		<servlet-class>com.mj.HiServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>hiServlet</servlet-name>
+		<url-pattern>/his</url-pattern>
+	</servlet-mapping>
+</web-app>

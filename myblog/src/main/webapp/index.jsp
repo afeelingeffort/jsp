@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +27,6 @@ body {
 	font-family: 'Noto Sans KR', sans-serif;
 	background-color: Lightyellow;
 	color: dimGray;
-	margin: 20px;
 	height: 100vh;
 	padding: 10px;
 	display: flex;
@@ -38,7 +39,7 @@ h1 {
 	display: inline;
 	align-items: center;
 	justify-content: center;
-	margin: 50px;
+	margin-bottom: 50px;
 }
 
 form {
@@ -69,7 +70,6 @@ h3 {
 	border-radius: 10px;
 	border: 1px solid silver;
 	padding: 10px;
-	margin-left: 10px
 }
 
 .w-btn {
@@ -137,7 +137,7 @@ button {
 
 	<h1>Sign in to your account</h1>
 
-	<form action="logincontroller" method="post">
+	<form action="signinController" method="post">
 
 		<div class="form1">
 			<h3>
@@ -163,14 +163,14 @@ button {
 
 		<div class="form-group">
 			<h4>
-				<label for="isRemember">Remember me</label> <input type="checkbox"
+				<label for="isRemember">- Remember me</label> <input type="checkbox"
 					id="isRemember" name="isRemember">
 			</h4>
 		</div>
 
 		<div class="form-group">
 			<h4>
-				<label for="hobby">hobby</label> <select name="hobby">
+				<label for="hobby">- hobby</label> <select name="hobby">
 					<option value="코딩">코딩</option>
 					<option value="공부">공부</option>
 					<option value="프로젝트" selected="selected">프로젝트</option>
@@ -181,7 +181,7 @@ button {
 		</div>
 
 		<div class="form-group">
-			<h4>liked Animal</h4>
+			<h4>- liked Animal</h4>
 			<h4>
 				<input type="checkbox" name="like" value="cat" id="cat"> <label
 					for="cat">Cat</label> <input type="checkbox" name="like"
