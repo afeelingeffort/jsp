@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%
+String email = request.getParameter("email");
+String password = request.getParameter("password");
+
+if(email != null && password != null){
+	if(email.equals("asdf@naver.com") && password.equals("asdf")){
+		session.setAttribute("email", email);
+		session.setAttribute("password", password);
+		response.sendRedirect("index2.jsp");
+	}
+}	
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -118,7 +131,6 @@ a:hover {
 }
 
 button {
-	margin-top: 5px;
 	margin-left: 10px;
 }
 </style>
@@ -137,7 +149,7 @@ button {
 
 	<h1>Sign in to your account</h1>
 
-	<form action="signinController" method="post">
+	<form action="/demo4/signin.jsp" method="post">
 
 		<div class="form1">
 			<h3>
@@ -155,6 +167,11 @@ button {
 				placeholder="Enter your password">
 		</div>
 
+		<div class="form1">
+			<h5>
+				Forgot your email? <a href="#">Find your email</a>
+			</h5>
+		</div>
 		<div class="form1">
 			<h5>
 				Forgot your password? <a href="#">Reset password</a>
@@ -193,5 +210,12 @@ button {
 
 		<button class="w-btn w-btn-indigo" type="submit">Submit</button>
 	</form>
+	
+	<% if(session.getAttribute("email") != null){	%>
+			
+			<p>현재 로그인 상태입니다. 
+			사용자 이메일 : <%= session.getAttribute("email") %></p>
+			
+	<%	} %>
 </body>
 </html>
