@@ -1,6 +1,8 @@
 package com.mj;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,15 +19,13 @@ public class MyServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String adminId = getServletConfig().getInitParameter("adminId");
-		String adminPw = getServletConfig().getInitParameter("adminPw");
+		
+		//forward()와 include()는 같이 쓸 수 없다.
+		String msg = "forward()";
+		request.setAttribute("msg", msg);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
+		dispatcher.forward(request, response);
 
-		System.out.println("admiId : " + adminId + ", adminPw : " + adminPw);
-
-		String img1 = getServletContext().getInitParameter("img1");
-		String testIp = getServletContext().getInitParameter("testIp");
-
-		System.out.println("img1 : " + img1 + ", testIp : " + testIp);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

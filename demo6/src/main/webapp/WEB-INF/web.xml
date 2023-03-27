@@ -16,7 +16,7 @@
 	<!-- 서블릿 전체에서 공유할 수 있는 데이터 선언 -->
 	<context-param>
 		<param-name>imgDir</param-name>
-		<param-value>/upload/img</param-value>
+		<param-value>/upload/img1</param-value>
 	</context-param>
 	
 	<context-param>

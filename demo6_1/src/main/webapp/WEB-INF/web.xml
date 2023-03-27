@@ -10,6 +10,20 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
+  <context-param>
+  	<param-name>error</param-name>
+  	<param-value>/upload/images</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>img1</param-name>
+  	<param-value>/upload/images</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>testIp</param-name>
+  	<param-value>129.15.40</param-value>
+  </context-param>
+  
   <servlet>
   	<servlet-name>mjServlet</servlet-name>
   	<servlet-class>com.mj.MyServlet</servlet-class>
@@ -21,6 +35,7 @@
   		<param-name>adminPw</param-name>
   		<param-value>7777</param-value>
   	</init-param>
+  	
   </servlet>
   
   <servlet-mapping>

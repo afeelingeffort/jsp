@@ -1,31 +1,31 @@
-package com.mj;
+package com.tenco;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/MyServlet")
-public class MyServlet extends HttpServlet {
+@WebServlet("/MyServlet2")
+public class MyServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public MyServlet() {
+	public MyServlet2() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String adminId = getServletConfig().getInitParameter("adminId");
-		String adminPw = getServletConfig().getInitParameter("adminPw");
-
-		System.out.println("admiId : " + adminId + ", adminPw : " + adminPw);
-
-		String img1 = getServletContext().getInitParameter("img1");
-		String testIp = getServletContext().getInitParameter("testIp");
-
-		System.out.println("img1 : " + img1 + ", testIp : " + testIp);
+		request.setCharacterEncoding("UTF-8");
+		String message = "안녕 include() 방식";
+		request.setAttribute("msg2", message);
+		
+		//RequestDispatcher를 이용하여 JSP를 포함시킴
+		RequestDispatcher dispatcher = request.getRequestDispatcher("result2.jsp");
+		dispatcher.include(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

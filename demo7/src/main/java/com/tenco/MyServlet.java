@@ -1,6 +1,8 @@
-package com.mj;
+package com.tenco;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,15 +19,14 @@ public class MyServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String adminId = getServletConfig().getInitParameter("adminId");
-		String adminPw = getServletConfig().getInitParameter("adminPw");
-
-		System.out.println("admiId : " + adminId + ", adminPw : " + adminPw);
-
-		String img1 = getServletContext().getInitParameter("img1");
-		String testIp = getServletContext().getInitParameter("testIp");
-
-		System.out.println("img1 : " + img1 + ", testIp : " + testIp);
+		//데이터 설정
+		String message = "안녕 JSP";
+		
+		request.setAttribute("msg", message);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
+		
+		//request, response 그대로 던져 버리기
+		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
