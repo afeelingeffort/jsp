@@ -34,10 +34,13 @@ body {
 		<span>Todo update</span>
 	</h1>
 	
-	<!-- int id, String title -->
+	<!-- update -->
 	<form action="/todo2/sTodoTest?action=update" method="post">
 		번호 <input type="number" name="id">
 		제목 <input type="text" name="title" maxlength="255">
+		내용 <input type="text" name="description">
+		우선 순위 <input type="number" name="priority">
+		카테고리 번호 <input type="number" name="categoryId">
 		<input type="submit" value="등록">
 	</form>
 </body>

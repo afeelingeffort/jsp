@@ -7,35 +7,38 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-body{
+body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
 
-h2 span{
-	background-color:purple;
+h2 span {
+	background-color: purple;
 }
 
-ul li{
-	list-style:none;
+ul li {
+	list-style: none;
 	margin-right: 30px;
-	float:left;
+	float: left;
 }
 </style>
 </head>
 <body>
-	<h2><span>list</span></h2>
+	<h2>
+		<span>list</span>
+	</h2>
 	<ul>
-		<li>ID </li> 
-		<li>NAME</li> 
+		<li>ID</li>
+		<li>NAME</li>
 	</ul>
 	<c:forEach var="category" items="${list2}">
-	<ul>
-		<li>${category.id}<button>delete</button></li>  
-		<li>${category.name}</li>  
-	</ul>
-	</c:forEach> 
+		<ul>
+			<li>${category.id}<button>delete</button>
+			</li>
+			<li>${category.name}</li>
+		</ul>
+	</c:forEach>
 </body>
 </html>

@@ -55,15 +55,17 @@ public class SCategoryTest extends HttpServlet {
 			System.out.println(resultList.toString());
 			
 //			list를 test/categoryList.jsp로 보냄 뭐 이런 느낌?
-			request.setAttribute("list", resultList); // request객체에 값 셋팅
-			RequestDispatcher dispatcher = request.getRequestDispatcher("test/categoryList.jsp");
-			dispatcher.forward(request, response);
-		}		
+//			request.setAttribute("list", resultList); // request객체에 값 셋팅
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("test/categoryList.jsp");
+//			dispatcher.forward(request, response);
+			
+			
+			request.setAttribute("list2", resultList);
+			RequestDispatcher dispatcher2 = request.getRequestDispatcher("test/list2.jsp");
+			dispatcher2.forward(request, response);
+		}
 		
 		// 목적지 list2.jsp --> jstl 사용해서 출력해주세요
-//		request.setAttribute("list2", resultList);
-//		RequestDispatcher dispatcher2 = request.getRequestDispatcher("test/list2.jsp");
-//		dispatcher2.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -19,7 +19,7 @@ public class TodoDAO implements ITodoDAO {
 	}
 
 	@Override
-	public int insert(String title, String description, int priority, int categoryId) {
+	public int insert(TodoDTO todoDTO) {
 		int resultCnt = 0;
 		String sql = " INSERT INTO todoList(title, description, priority, categoryId) " 
 		+ " VALUES(?, ?, ?, ?) ";
@@ -28,10 +28,10 @@ public class TodoDAO implements ITodoDAO {
 		try {
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, title);
-			pstmt.setString(2, description);
-			pstmt.setInt(3, priority);
-			pstmt.setInt(4, categoryId);
+			pstmt.setString(1, todoDTO.getTitle());
+			pstmt.setString(2, todoDTO.getDescription());
+			pstmt.setInt(3, todoDTO.getPriority());
+			pstmt.setInt(4, todoDTO.getCategoryId());
 
 			resultCnt = pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -58,7 +58,7 @@ public class TodoDAO implements ITodoDAO {
 	public ArrayList<TodoDTO> select() {
 		ArrayList<TodoDTO> list = new ArrayList<>();
 
-		String query = "SELECT * FROM todoList";
+		String query = " SELECT * FROM todoList ";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
@@ -71,14 +71,15 @@ public class TodoDAO implements ITodoDAO {
 				String title = rs.getString("title");
 				String description = rs.getString("description");
 				int priority = rs.getInt("priority");
-				boolean completed = rs.getBoolean("completed");
+				int completed = rs.getInt("completed");
 				String createdAt = rs.getString("createdAt");
-				int category_id = rs.getInt("category_id");
+				int categoryId = rs.getInt("categoryId");
 
-				TodoDTO todoDTO = new TodoDTO(id, title, description, priority, completed, createdAt, category_id);
+				TodoDTO todoDTO = new TodoDTO(id, title, description, priority, completed, createdAt, categoryId);
 				list.add(todoDTO);
 			}
 		} catch (SQLException e) {
+			System.out.println("select에서 오류가 발생했어");
 			e.printStackTrace();
 		} finally {
 			try {
@@ -92,16 +93,21 @@ public class TodoDAO implements ITodoDAO {
 		return list;
 	}
 
+	// 매개변수로 DTO 받기 -> dto.getTitle();
 	@Override
-	public int update(int id, String title) {
+	public int update(int id, TodoDTO todoDTO) {
 		int resultCnt = 0;
-		String sql = " UPDATE todoList SET title = ? WHERE id = ? ";
+		String sql = " UPDATE todoList SET title=?, description=?, priority=?, categoryId = ? "
+				+ " WHERE id=? ";
 		PreparedStatement pstmt = null;
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, id);
-			pstmt.setString(2, title);
+			pstmt.setString(1, todoDTO.getTitle());
+			pstmt.setString(2, todoDTO.getDescription());
+			pstmt.setInt(3, todoDTO.getPriority());
+			pstmt.setInt(4, todoDTO.getCategoryId());
+			pstmt.setInt(5, id);
 			
 			resultCnt = pstmt.executeUpdate();
 		} catch (SQLException e) {

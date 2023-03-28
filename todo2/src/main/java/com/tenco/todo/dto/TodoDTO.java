@@ -5,28 +5,43 @@ public class TodoDTO {
 	private String title;
 	private String description;
 	private int priority;
-	private boolean completed; // 0 : false, 1 : true
+	private int completed; // 0 : false, 1 : true
 	private String createdAt;
-	private int category_id;
+	private int categoryId;
 
 	public TodoDTO() {
 	}
-	
-	public TodoDTO(int id, String title, String description, int priority, boolean completed, String createdAt,
-			int category_id) {
+
+	public TodoDTO(int id, String title, String description, int priority, int completed, String createdAt,
+			int categoryId) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.priority = priority;
 		this.completed = completed;
 		this.createdAt = createdAt;
-		this.category_id = category_id;
+		this.categoryId = categoryId;
+	}
+
+	public TodoDTO(int id, String title, String description, int priority, int categoryId) {
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.priority = priority;
+		this.categoryId = categoryId;
+	}
+
+	public TodoDTO(String title, String description, int priority, int categoryId) {
+		this.title = title;
+		this.description = description;
+		this.priority = priority;
+		this.categoryId = categoryId;
 	}
 
 	@Override
 	public String toString() {
 		return "TodoDTO [id=" + id + ", title=" + title + ", description=" + description + ", priority=" + priority
-				+ ", completed=" + completed + ", createdAt=" + createdAt + ", category_id=" + category_id + "]";
+				+ ", completed=" + completed + ", createdAt=" + createdAt + ", category_id=" + categoryId + "]";
 	}
 
 	public int getId() {
@@ -61,11 +76,11 @@ public class TodoDTO {
 		this.priority = priority;
 	}
 
-	public boolean isCompleted() {
+	public int getCompleted() {
 		return completed;
 	}
 
-	public void setCompleted(boolean completed) {
+	public void setCompleted(int completed) {
 		this.completed = completed;
 	}
 
@@ -77,12 +92,12 @@ public class TodoDTO {
 		this.createdAt = createdAt;
 	}
 
-	public int getCategory_id() {
-		return category_id;
+	public int getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
 }
