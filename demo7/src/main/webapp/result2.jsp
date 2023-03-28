@@ -14,6 +14,7 @@
 	response.setContentType("text/plain"); //평문
 	String msg = (String) request.getAttribute("msg2") + "<<<";
 	out.println(msg);
+
 	%>
 
 	<p><%=msg%></p>

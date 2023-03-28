@@ -27,6 +27,7 @@ public class MyServlet extends HttpServlet {
 		
 		//request, response 그대로 던져 버리기
 		dispatcher.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

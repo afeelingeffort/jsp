@@ -1,14 +1,20 @@
 package com.tenco.todo.repository;
 
+import java.util.ArrayList;
+
+import com.tenco.todo.dto.CategoryDTO;
+
 public interface ICategoryRepo {
 
 	// CRUD
-	void select();
+	// 매개변수는 WHERE절이나 그런 것들
+	// ArrayList<CategoryDTO> -> ArrayList add!
+	ArrayList<CategoryDTO> select();
 
-	void insert();
+	int insert(String name);
 
-	void delete();
+	int update(int id, String name);
 
-	void update();
+	int delete(int id);
 
 }

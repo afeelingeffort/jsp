@@ -26,6 +26,7 @@ public class MyServlet2 extends HttpServlet {
 		//RequestDispatcher를 이용하여 JSP를 포함시킴
 		RequestDispatcher dispatcher = request.getRequestDispatcher("result2.jsp");
 		dispatcher.include(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

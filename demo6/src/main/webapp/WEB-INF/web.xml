@@ -13,6 +13,7 @@
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
 	
+	<!-- application -->
 	<!-- 서블릿 전체에서 공유할 수 있는 데이터 선언 -->
 	<context-param>
 		<param-name>imgDir</param-name>
@@ -29,6 +30,7 @@
 		<param-value>88.0.13.1</param-value>
 	</context-param>
 
+	<!-- config 하나의 객체에서만 쓸 수 있음 -->
 	<servlet>
 		<servlet-name>myServlet</servlet-name>
 		<servlet-class>com.tenco.MyServlet</servlet-class>

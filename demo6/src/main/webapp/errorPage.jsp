@@ -21,15 +21,15 @@ body {
 
 h1 {
 	font-size: 100px;
-	color : red; 
+	color: red;
 }
 
-a{
+a {
 	text-decoration: none;
-	color:black;
+	color: black;
 }
 
-a:hover{
+a:hover {
 	text-decoration: underline;
 }
 </style>
@@ -39,8 +39,10 @@ a:hover{
 		<h1>Error 404 Page Not Found</h1>
 	</div>
 	<div>
-	<h2>잘못된 요청입니다.</h2>
-	<h2><a href="#">새로고침</a></h2>
+		<h2>잘못된 요청입니다.</h2>
+		<h2>
+			<a href="#">새로고침</a>
+		</h2>
 	</div>
 	<!-- 이쁘게 에러 페이지 꾸며보기 -->
 </body>

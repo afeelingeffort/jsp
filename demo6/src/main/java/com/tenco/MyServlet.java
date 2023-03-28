@@ -24,6 +24,7 @@ public class MyServlet extends HttpServlet {
 		System.out.println("adminId : " + adminId);
 		System.out.println("adminPw : " + adminPw);
 
+		// 내장객체 application 활용
 		String imgDir = getServletContext().getInitParameter("imgDir");
 		String testServerIp = getServletContext().getInitParameter("testServerIp");
 		String realServerIp = getServletContext().getInitParameter("realServerIp");
