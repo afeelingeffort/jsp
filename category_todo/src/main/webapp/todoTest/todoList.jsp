@@ -16,6 +16,11 @@ body {
 	flex-direction: column;
 }
 
+ul li {
+	list-style: none;
+	margin-right: 30px;
+	float: left;
+}
 </style>
 </head>
 <body>
@@ -23,6 +28,7 @@ body {
 		<span>TodoList</span>
 	</h1>
 
+	<%--
 	<table>
 		<tr>
 			<th>ID</th>
@@ -34,24 +40,25 @@ body {
 			<th>categoryId</th>
 
 		</tr>
-		<c:forEach var="todoList" items="${todoList}">
-			<tr>
-				<td>${todoList.id}</td>
-				<td>${todoList.title}</td>
-				<td>${todoList.description}</td>
-				<td>${todoList.priority}</td>
-				<td>${todoList.completed}</td>
-				<td>${todoList.createdAt}</td>
-				<td>${todoList.categoryId}</td>
-				<button>
-					<a href="/todo2/sTodoTest?action=delete&cid=${todoList.id}">delete
-					</a>
-				</button>
-			</tr>
-		</c:forEach>
+	<c:forEach var="todoList" items="${todoList}">
+		<tr>
+			<td>${todoList.id}</td>
+			<td>${todoList.title}</td>
+			<td>${todoList.description}</td>
+			<td>${todoList.priority}</td>
+			<td>${todoList.completed}</td>
+			<td>${todoList.createdAt}</td>
+			<td>${todoList.categoryId}</td>
+			<button>
+				<a href="/todo2/sTodoTest?action=delete&cid=${todoList.id}">delete
+				</a>
+			</button>
+		</tr>
+	</c:forEach>
 	</table>
 
-	<%--
+	--%>
+
 	<ul>
 		<li>id</li>
 		<li>title</li>
@@ -77,6 +84,5 @@ body {
 			<br>
 		</c:forEach>
 	</ul>
-	 --%>
 </body>
 </html>

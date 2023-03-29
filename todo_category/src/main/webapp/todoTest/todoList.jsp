@@ -15,7 +15,6 @@ body {
 	align-items: center;
 	flex-direction: column;
 }
-
 </style>
 </head>
 <body>
@@ -32,8 +31,8 @@ body {
 			<th>completed</th>
 			<th>createdAt</th>
 			<th>categoryId</th>
-
 		</tr>
+		<%-- 경로 todo_category/sTodoTest --%>
 		<c:forEach var="todoList" items="${todoList}">
 			<tr>
 				<td>${todoList.id}</td>
@@ -44,39 +43,29 @@ body {
 				<td>${todoList.createdAt}</td>
 				<td>${todoList.categoryId}</td>
 				<button>
-					<a href="/todo2/sTodoTest?action=delete&cid=${todoList.id}">delete
+					<a href="/todo_category/sTodoTest?action=delete&cid=${todoList.id}"></a>delete
+				</button>
+			</tr>
+		</c:forEach>
+	</table>
+	<%--
+		<c:forEach var="todoList" items="${todoList}">
+			<tr>
+				<td>${todoList.id}</td>
+				<td>${todoList.title}</td>
+				<td>${todoList.description}</td>
+				<td>${todoList.priority}</td>
+				<td>${todoList.completed}</td>
+				<td>${todoList.createdAt}</td>
+				<td>${todoList.categoryId}</td>
+				<button>
+					<a href="/todo_category/sTodoTest?action=delete&cid=${todoList.id}">delete
 					</a>
 				</button>
 			</tr>
 		</c:forEach>
 	</table>
-
-	<%--
-	<ul>
-		<li>id</li>
-		<li>title</li>
-		<li>description</li>
-		<li>priority</li>
-		<li>completed</li>
-		<li>createdAt</li>
-		<li>categoryId</li>
-	</ul>
-
-		<ul>
-		<c:forEach var="todoList" items="${todoList}">
-			<li>${todoList.id}</li>
-			<li>${todoList.title}</li>
-			<li>${todoList.description}</li>
-			<li>${todoList.priority}</li>
-			<li>${todoList.completed}</li>
-			<li>${todoList.createdAt}</li>
-			<li>${todoList.categoryId}</li>
-			<button>
-				<a href="/todo2/sTodoTest?action=delete&cid=${todoList.id}">delete
-			</button>
-			<br>
-		</c:forEach>
-	</ul>
+	
 	 --%>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.tenco.todo.testServlet;
+package com.tenco.todo.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.tenco.todo.dto.CategoryDTO;
 import com.tenco.todo.dto.TodoDTO;
 import com.tenco.todo.repository.TodoDAO;
-import com.tenco.todo.utils.DBHelper;
 
 @WebServlet("/sTodoTest")
 public class STodoTest extends HttpServlet {
@@ -32,13 +32,23 @@ public class STodoTest extends HttpServlet {
 		if("delete".equals(action)) {
 			String cid = request.getParameter("cid");
 			dao.delete(Integer.parseInt(cid));
-			response.sendRedirect("/todo2/sTodoTest");
-		} else {
+			response.sendRedirect("/test/sTodoTest");
+		} else if("select".equals(action)){
 			ArrayList<TodoDTO> todoList = dao.select();
 			System.out.println(todoList.toString());
 			
 			request.setAttribute("todoList", todoList);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("todoTest/todoList.jsp");
+			dispatcher.forward(request, response);
+		} else {
+			String cid = request.getParameter("categoryId");
+			String id = request.getParameter("id");
+			String name = request.getParameter("name");
+			ArrayList<CategoryDTO> cList = dao.selectCategoryIdAndTodoId(Integer.parseInt(cid),Integer.parseInt(id), name);
+			System.out.println(cList.toString());
+			
+			request.setAttribute("cList", cList);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("test/categoryList.jsp");
 			dispatcher.forward(request, response);
 		}
 		
