@@ -28,16 +28,10 @@ public class SigninController extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String isRemember = request.getParameter("isRemember");
-		String hobby = request.getParameter("hobby");
-		String[] likes = request.getParameterValues("like");
 
 		System.out.println("email : " + email);
 		System.out.println("password : " + password);
 		System.out.println("isRemember : " + isRemember);
-		System.out.println("hobby : " + hobby);
-		for (String like : likes) {
-			System.out.println("like : " + like);
-		}
 	}
 
 }

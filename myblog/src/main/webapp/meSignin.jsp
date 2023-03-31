@@ -118,7 +118,7 @@ a:hover {
 }
 
 button {
-	margin-top: 5px;
+	margin-top: 50px;
 	margin-left: 10px;
 }
 </style>
@@ -165,29 +165,6 @@ button {
 			<h4>
 				<label for="isRemember">- Remember me</label> <input type="checkbox"
 					id="isRemember" name="isRemember">
-			</h4>
-		</div>
-
-		<div class="form-group">
-			<h4>
-				<label for="hobby">- hobby</label> <select name="hobby">
-					<option value="코딩">코딩</option>
-					<option value="공부">공부</option>
-					<option value="프로젝트" selected="selected">프로젝트</option>
-					<option value="운동">운동</option>
-					<option value="술마시기">술마시기</option>
-				</select>
-			</h4>
-		</div>
-
-		<div class="form-group">
-			<h4>- liked Animal</h4>
-			<h4>
-				<input type="checkbox" name="like" value="cat" id="cat"> <label
-					for="cat">Cat</label> <input type="checkbox" name="like"
-					value="dog" id="dog"> <label for="dog">Dog</label> <input
-					type="checkbox" name="like" value="lion" id="lion"> <label
-					for="lion">Lion</label>
 			</h4>
 		</div>
 
