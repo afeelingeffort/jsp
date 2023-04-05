@@ -7,7 +7,6 @@ String username = (String) session.getAttribute("username");
 if (username == null) {
 	response.sendRedirect("login.jsp");
 }
-
 //저장되어 있던 아이디 확인
 %>
 
@@ -33,7 +32,7 @@ body {
 	</h1>
 
 	<form action="logout.jsp">
-		<input type="submit" value="submit">submit
+		<input type="submit" value="logout">
 	</form>
 </body>
 </html>
